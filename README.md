@@ -1,4 +1,4 @@
-##IfStop [![Build Status](https://travis-ci.org/ericdum/ifstop.svg?branch=master)](https://travis-ci.org/ericdum/wait)
+##IfStop [![Build Status](https://travis-ci.org/ericdum/wait.svg?branch=master)](https://travis-ci.org/ericdum/wait)
 
 ###Usage
 
