@@ -3,6 +3,9 @@ class IfStop {
   constructor() {
     this._done = true;
   }
+  stop() {
+    return this.false();
+  }
   true() {
     if (this._done) {
       this.start();

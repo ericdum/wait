@@ -14,7 +14,19 @@ describe("if stop", function(){
   it("true after called done", function(){
     expect(loading.true()).to.be.eql(false);
     loading.done();
-    expect(loading.false()).to.be.eql(false);
-    expect(loading.false()).to.be.eql(true);
+    expect(loading.stop()).to.be.eql(false);
+    expect(loading.stop()).to.be.eql(true);
+  })
+
+  describe('Examples', function(){
+    it("exp1", function(){
+      var loading = new IfStop();
+      if (loading.stop()) return expect(true).to.be(false);
+      expect(true).to.be(true);
+      if (loading.stop()) expect(true).to.be(true);
+      if (loading.stop()) expect(true).to.be(true);
+      loading.done();
+      if (loading.stop()) expect(true).to.be(false);
+    })
   })
 });
