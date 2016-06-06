@@ -1,0 +1,23 @@
+{
+  "name": "ifstop",
+  "version": "0.0.2",
+  "desciption": "wait for it done",
+  "keywords": "wait",
+  "homepage": "https://github.com/ericdum/wait/",
+  "bugs": "https://github.com/ericdum/wait/issues",
+  "author": "木酱 <lichen.dlc@alibaba-inc.com> (http://mujiang.info/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericdum/wait"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --reporter tap test.js"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "dependencies": {
+    "lodash": "~3.8.0"
+  }
+}
