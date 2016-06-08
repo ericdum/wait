@@ -4,23 +4,20 @@ class IfStop {
     this._done = true;
   }
   stop() {
-    return this.false();
+    return this.running();
   }
-  true() {
-    if (this._done) {
-      this.start();
-      return true;
-    } else {
-      return false;
-    }
+  running() {
+    var st = !this._done;
+    this.tryStart();
+    return st;
   }
-  false() {
-    if (this._done) {
-      this.start();
-      return false;
-    } else {
-      return true;
-    }
+  stoped() {
+    var st = this._done;
+    this.tryStart();
+    return st;
+  }
+  tryStart() {
+    if (this._done) this.start();
   }
   start() {
     this._done = false;
