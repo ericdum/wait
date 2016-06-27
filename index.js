@@ -1,29 +1,36 @@
 "use strict"
+
+var DEFAULT_INDENTITY = '_default_';
 class IfStop {
   constructor() {
-    this._done = true;
+    this._working = {};
   }
-  stop() {
-    return this.running();
+  stop(name) {
+    return this.running(name);
   }
-  running() {
-    var st = !this._done;
-    this.tryStart();
+  running(name) {
+    name = name || DEFAULT_INDENTITY;
+    var st = !!this._working[name];
+    this.tryStart(name);
     return st;
   }
-  stoped() {
-    var st = this._done;
-    this.tryStart();
+  stoped(name) {
+    name = name || DEFAULT_INDENTITY;
+    var st = !this._working[name];
+    this.tryStart(name);
     return st;
   }
-  tryStart() {
-    if (this._done) this.start();
+  tryStart(name) {
+    name = name || DEFAULT_INDENTITY;
+    if (!this._working[name]) this.start(name);
   }
-  start() {
-    this._done = false;
+  start(name) {
+    name = name || DEFAULT_INDENTITY;
+    this._working[name] = true;
   }
-  done() {
-    this._done = true;
+  done(name) {
+    name = name || DEFAULT_INDENTITY;
+    this._working[name] = false;
   }
 }
 

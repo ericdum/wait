@@ -6,8 +6,8 @@
 var IfStop = require('ifstop');
 var loading = new IfStop();
 
-if (loading.stop()) return false;
+if (loading.stop("name space or let it empty")) return false;
 // ... do your work
-loading.done();
+loading.done("name space or let it empty");
 
 ```

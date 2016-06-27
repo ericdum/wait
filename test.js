@@ -29,4 +29,20 @@ describe("if stop", function(){
       if (loading.stop()) expect(true).to.be(false);
     })
   })
+
+  describe('Examples Names', function(){
+    it("exp1", function(){
+      var loading = new IfStop();
+      if (loading.stop('a')) return expect(true).to.be(false);
+      if (loading.stop('b')) return expect(true).to.be(false);
+      expect(true).to.be(true);
+      if (loading.stop('a')) expect(true).to.be(true);
+      if (loading.stop('b')) expect(true).to.be(true);
+      loading.done('a');
+      if (loading.stop('a')) expect(true).to.be(false);
+      if (loading.stop('b')) expect(true).to.be(true);
+      loading.done('b');
+      if (loading.stop('b')) expect(true).to.be(false);
+    })
+  })
 });
